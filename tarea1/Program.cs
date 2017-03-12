@@ -133,7 +133,7 @@ namespace tarea1
             string inputString = Console.ReadLine();
             int inputInt = 0;
 
-            if (int.TryParse(inputString, out inputInt))
+            if (int.TryParse(inputString, out inputInt) && PizzaValida(inputInt))
             {
                 if (cantidadPizzasVendidas < 40)
                 {
@@ -197,6 +197,11 @@ namespace tarea1
                 Error();
             }
             Console.WriteLine("\n");
+        }
+
+        private static bool PizzaValida(int input)
+        {
+            return input > 0 && input < 5;
         }
 
         private static bool PreguntaSiNO(int input)
